@@ -6,7 +6,7 @@ from scipy.sparse.dok import dok_matrix
 from scipy.sparse.csgraph import dijkstra
 
 # Load the image from disk as a numpy ndarray
-original_img = imageio.imread('/home/jim/Pictures/Webcam/2019-06-26-174012.jpg')
+original_img = imageio.imread('2019-06-26-174012.jpg')
 
 # Create a flat color image for graph building:
 img = original_img[:, :, 0] + original_img[:, :, 1] + original_img[:, :, 2]
