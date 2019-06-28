@@ -5,9 +5,14 @@ import cv2
 image = cv2.imread('./2019-06-26-174012.jpg')
 
 boundaries = [
-	([170, 117, 66], [220, 167, 116]),
-	([38, 201, 199], [88, 251, 249])
+	([160, 107, 56], [255, 203, 151]),
+	([38, 201, 199], [88, 251, 249]),
+	([138, 135, 130], [238, 235, 240])
 ]
+
+	# rgb([148, 145, 140], [168, 165, 160])
+
+output2 = None
 
 for (lower, upper) in boundaries:
 	# create NumPy arrays from the boundaries
@@ -19,6 +24,11 @@ for (lower, upper) in boundaries:
 	mask = cv2.inRange(image, lower, upper)
 	output = cv2.bitwise_and(image, image, mask = mask)
  
+	if output2 is None:
+	  output2 = output
+	else:
+		output2 = cv2.bitwise_or(output2, output)
+
 	# show the images
-	cv2.imshow("images", np.hstack([image, output]))
+	cv2.imshow("images", np.hstack([image, output2]))
 	cv2.waitKey(0)
