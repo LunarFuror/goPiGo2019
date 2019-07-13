@@ -1,3 +1,4 @@
+# Note for Jim:  In MacOS Run this command "workon OpenCV-master-py3" - select virtualenv as Python interrpretor
 import numpy as np
 import cv2
  
