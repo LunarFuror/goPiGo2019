@@ -38,6 +38,9 @@ grayImage = cv2.cvtColor(output2, cv2.COLOR_BGR2GRAY)
 (thresh, blackAndWhiteImage) = cv2.threshold(grayImage, 127, 255, cv2.THRESH_BINARY)
 
 # show the images
+cv2.imshow("images", image)
+cv2.waitKey(0)
+
 # cv2.imshow("images", output2)
 # cv2.waitKey(0)
 
